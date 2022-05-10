@@ -80,8 +80,10 @@ code du formulaire d'inscription */
 /* code de la page de connexion  */
 .menaj{
   margin-top: 50px !important;
+  height: 100% !important;
 }
 .menaj h2{
+  
   text-decoration: underline 6px solid #2DA333;
   font-weight: bold;
 }
@@ -92,6 +94,10 @@ code du formulaire d'inscription */
 .menu{
   height: 400px !important;
   width: 175px !important;
+}
+.etudiant{
+  /* height: px !important; */
+  /* width: 250px !important; */
 }
 
 
