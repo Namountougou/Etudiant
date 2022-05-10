@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #888888;
+  height: 100% !important;
+  width: 100% !important;
+  align-items: center !important;
+}
+
+/* code du background de la page d'inscription*/
+.bgi {
+  height: 100% !important;
+  width: 80% !important;
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  background-attachment: fixed;
+  background-position: center center;
+}
+.log {
+  justify-content: space-between;
+}
+.log h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-right: 50px !important;
+  padding-top: 35px !important;
+}
+.log img {
+  width: 90px;
+  height: 90px;
+}
+.logo1 {
+  float: flex-end;
+}
+/* fin code du background 
+
+code du formulaire d'inscription */
+
+.logdoc {
+  height: 85px;
+  width: 120px !important;
+}
+
+.saisi {
+  height: 100%;
+  opacity: 0.6;
+  margin-bottom: 50px !important;
+}
+
+.form-control {
+  margin-top: 20px !important;
+  width: 100% !important;
+}
+.form-control:focus {
+  border-color: #888888 !important;
+  box-shadow: green !important;
+}
+.bouton {
+  margin-top: 20px !important;
+  background: #2DA333!important;
+  border-radius: 30px !important;
+  color: white !important;
+  font-size: 1.2rem !important;
+  padding: 5px !important;
+  width: 140px !important;
+  height: 40px !important;
+}
+
+/* code du footer */
+.footer {
+  bottom: 0;
+  padding: 0;
+  height: 40px;
+  width: 100% !important;
+}
+
+/* code de la page de connexion  */
+.menaj{
+  margin-top: 50px !important;
+}
+.menaj h2{
+  text-decoration: underline 6px solid #2DA333;
+  font-weight: bold;
+}
+.log h2{
+  font-weight: bold;
+  font-size: 3rem;
+}
+.menu{
+  height: 400px !important;
+  width: 175px !important;
+}
+
+
