@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-  <link rel="stylesheet" href="../assets/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/mdb5-free-standard/css/mdb.min.css">
 </head>
 <title>Connexion</title>
 
@@ -43,50 +43,55 @@
                       <label class="form-check-label" for="inlineRadio1">oui</label>
                       <input class="form-check-input" type="radio" name="Radio" id="Radio2" value="option2">
                       <label class="form-check-label" for="inlineRadio2">non</label>
-                        <button type="submit" class="btn btn-primary">Ajouter</button>
+                      <button type="submit" class="btn btn-primary">Ajouter</button>
 
                     </div>
-                    <div class="form-group border-4 border-bottom formins">
-                      //ajouter un input de type select avec une fonction recherche de l'etudiant
-                      <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                    </div>
-                  </form>
-                  
-                      
-                      
-                      
-                      <select class="form-control" name="tuteur">
-                        <option value="">tuteur</option>
-                        <?php
-                        $sql = "SELECT * FROM tuteur";
-                        $result = $conn->query($sql);
-                        if ($result->num_rows > 0) {
-                          while ($row = $result->fetch_assoc()) {
-                            echo '<option value="' . $row['id'] . '">' . $row['nom'] . ' ' . $row['prenom'] . '</option>';
-                          }
-                        }
-                        ?>
-                      </select>
-                    </div>
-                  </form>
+                    <d class="form-group border-4 border-bottom formins">
+
+                      <div class="input-group">
+                        <div class="form-outline">
+
+
+
+                          <select>
+
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
+                            <option value="6">Six</option>
+                            <option value="7">Seven</option>
+                            <option value="8">Eight</option>
+                            <option value="9">Nine</option>
+                            <option value="10">Ten</option>
+                            <input id="search-focus" type="search" id="form1" class="form-control" placeholder="Search" data-mdb-filter="true" />
+                          </select>
+                        </div>
+
+                      </div>
+
+
+
 
                 </div>
+                </form>
               </div>
-            </div>
-          </div>
+              </form>
 
-          <div class="row text-center text-light bg-success footer">
-            <h4>&copy;UFR SDS/UJKZ</h4>
+            </div>
           </div>
         </div>
       </div>
 
+      <div class="row text-center text-light bg-success footer">
+        <h4>&copy;UFR SDS/UJKZ</h4>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/jquery-3.5.1.min.js"></script>
+  <script src="../assets/mdb5-free-standard/js/mdb.min.js"></script>
 
 </body>
 
