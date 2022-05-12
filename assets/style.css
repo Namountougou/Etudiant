@@ -10,6 +10,13 @@ body {
   align-items: center !important;
 }
 
+
+
+
+
+
+
+
 /* code du background de la page d'inscription*/
 .bgi {
   height: 100% !important;
@@ -35,9 +42,16 @@ body {
 .logo1 {
   float: flex-end;
 }
-/* fin code du background 
 
-code du formulaire d'inscription */
+
+
+
+
+
+
+
+
+/* code du formulaire d'inscription */
 
 .logdoc {
   height: 85px;
@@ -51,26 +65,23 @@ code du formulaire d'inscription */
 }
 
 .form-control {
-  margin-top: 20px !important;
+  margin-top: 10px !important;
   width: 100% !important;
 }
-.form-control:focus {
-  box-shadow: green !important;
-}
-/* .formins {
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-} */
 .bouton {
   margin-top: 20px !important;
   background: #2da333 !important;
   border-radius: 30px !important;
   color: white !important;
   font-size: 1.2rem !important;
+  font-weight: bold !important;
   padding: 5px !important;
   width: 140px !important;
   height: 40px !important;
 }
+
+
+
 
 /* code du footer */
 .footer {
@@ -79,6 +90,17 @@ code du formulaire d'inscription */
   height: 40px;
   width: 100% !important;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 /* code de la page de connexion  */
 .menaj {
@@ -102,6 +124,19 @@ code du formulaire d'inscription */
 }
 .etudiant {
   height: 400px !important;
-  background-color: #8888880e !important;
+  background-color: #4141414a !important;
   box-shadow: 10px 10px 20px #000 !important;
+  background-image: url("../images/etudiante.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: cover !important;
 }
+
+
+
+/* code de la page liste  */
+
+
+
+
+
