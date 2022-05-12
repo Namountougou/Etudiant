@@ -9,18 +9,17 @@ body {
   width: 100% !important;
   align-items: center !important;
 }
-
-
-
-
-
-
-
+.principe {
+  margin-top: 50px !important;
+  background-color: #8888885e !important;
+  border-radius: 5px !important;
+  box-shadow: 10px 10px 10px #000000 !important;
+}
 
 /* code du background de la page d'inscription*/
 .bgi {
   height: 100% !important;
-  width: 80% !important;
+  width: 90% !important;
   background-repeat: no-repeat;
   /* background-size: cover; */
   background-attachment: fixed;
@@ -43,14 +42,6 @@ body {
   float: flex-end;
 }
 
-
-
-
-
-
-
-
-
 /* code du formulaire d'inscription */
 
 .logdoc {
@@ -60,7 +51,7 @@ body {
 
 .saisi {
   height: 100%;
-  opacity: 0.6;
+  background-color: #888888 !important;
   margin-bottom: 50px !important;
 }
 
@@ -79,9 +70,28 @@ body {
   width: 140px !important;
   height: 40px !important;
 }
-
-
-
+.boutli {
+  margin-top: 20px !important;
+  background: #081c7d !important;
+  border-radius: 30px !important;
+  color: white !important;
+  font-size: 2rem !important;
+  font-weight: bold !important;
+  padding: 5px !important;
+  width: 75px !important;
+  height: 60px !important;
+}
+.boutfli {
+  margin-top: 20px !important;
+  background: #d40d06 !important;
+  border-radius: 30px !important;
+  color: white !important;
+  font-size: 2rem !important;
+  font-weight: bold !important;
+  padding: 5px !important;
+  width: 75px !important;
+  height: 60px !important;
+}
 
 /* code du footer */
 .footer {
@@ -90,17 +100,6 @@ body {
   height: 40px;
   width: 100% !important;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* code de la page de connexion  */
 .menaj {
@@ -118,7 +117,7 @@ body {
 .menu {
   height: 400px !important;
   width: 175px !important;
-   background-color: #036e0bbe !important;
+  background-color: #036e0bbe !important;
   box-shadow: 10px 10px 20px #000 !important;
   border-radius: 10px !important;
 }
@@ -131,12 +130,23 @@ body {
   background-position: center center !important;
   background-size: cover !important;
 }
-
-
-
-/* code de la page liste  */
-
-
-
-
-
+.auth {
+  height: 375px !important;
+  background-color: #f1f1f1d1 !important;
+  box-shadow: 10px 10px 20px #000 !important;
+  background-image: url("../images/Reacto.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+}
+.formau {
+  background-color: #646363d1 !important;
+  box-shadow: 10px 10px 10px #000 !important;
+  border-radius: 10px !important;
+}
+.imag img {
+  height: 150px !important;
+}
+.bout {
+  font-weight: bold !important;
+  font-size: 2rem !important;
+}

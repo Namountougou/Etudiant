@@ -22,8 +22,8 @@
 <title>Liste</title>
 
 <body>
-    <div class=" principe d-flex align-items-center ">
-        <div class="container col-md-12 col-sm-12 bgi">
+    <div class=" principe d-flex align-items-center col-md-10 offset-md-1 ">
+        <div class="container-fluid bgi">
             <div class="row">
                 <div class="col-md-12 d-flex log">
                     <img src="../images/UJKZ.png" class="col-md-1 col-sm-2 float-start logo">
@@ -31,8 +31,8 @@
                     <img src="../images/pharma.png" class="col-md-1 col-sm-2 float-end logo1">
                 </div>
             </div>
-            <div class="container mt-4">
-                <div class="row">
+            <div class="coco d-flex">
+                <div class="row col-md-10">
 
                     <table class="table table-hover table-striped" id="mytable">
                         <thead>
@@ -192,6 +192,11 @@
 
                         </tbody>
                     </table>
+
+                </div>
+                <div class="bout col-md-1 offset-md-1  justify-content-center align-items-center">
+                    <a href="#"> <button type="submit" class="btn boutli  text-center">+</button></a>
+                        <a href="#"> <button type="submit" class="btn boutfli  text-center">X</button></a>
                 </div>
 
 

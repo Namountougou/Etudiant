@@ -9,16 +9,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
   <link rel="stylesheet" href="../assets/mdb5-free-standard/css/mdb.min.css">
   <link rel="stylesheet" href="../assets/jquery-ui-1.13.1.custom/jquery-ui.min.css">
-  <script src="../assets/index.js"defer></script>
+  <script src="../assets/index.js" defer></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="../assets/jquery-ui-1.13.1.custom/jquery-ui.min.js"></script>
-</head>
-
 </head>
 <title>Connexion</title>
 
 <body>
-  <div class=" principe d-flex align-items-center ">
+  <div class=" principe d-flex align-items-center col-md-10 offset-md-1 ">
     <div class="container col-md-12 col-sm-12 bgi">
       <div class="row">
         <div class="col-md-12 d-flex log">

@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-   <link rel="stylesheet" href="./assets/mdb5-free-standard/css/mdb.min.css">
+    <link rel="stylesheet" href="./assets/mdb5-free-standard/css/mdb.min.css">
 </head>
 <title>Accueil</title>
 <html>
 
-<body class="container-fluid principe d-flex align-items-center">
-    <div class="container col-md-12 col-sm-12 bgi" style="background-image: url('./images/oks.jpg')">
+<body>
+    <div class=" principe d-flex align-items-center col-md-10 offset-md-1">
+         <div class="container col-md-12 col-sm-12 bgi" style="background-image: url('./images/oks.jpg')">
         <div class="row">
             <div class="col-md-12 d-flex log">
                 <img src="./images/UJKZ.png" class="col-md-1 col-sm-2 float-start logo">
@@ -25,7 +26,7 @@
             <div class=" card col-md-4 rounded-3  saisi">
                 <div class="card-body">
                     <img src="./images/iconedoc.png" class="col-md-1 offset-md-4 col-sm-2 logdoc">
-                    <form action="index.php" method="post" class="d-flex justify-content-md-center">
+                    <form action="" method="post" class="d-flex justify-content-md-center">
                         <div class="form-group border-4 border-bottom  formins">
                             <input type="text" class="form-control" id="exampleInputnom" name="nom" placeholder="nom">
                             <input type="text" class="form-control" id="exampleInputnom" name="prenom" placeholder="prenom">
@@ -42,6 +43,8 @@
             <h4>&copy;UFR SDS/UJKZ</h4>
         </div>
     </div>
+
+    </div> 
 
 
 
