@@ -21,10 +21,7 @@ if (isset($_POST['valider'])) {
             if ($user==0) { // si l'email n'existe pas
                 $req = $bdd->prepare("INSERT INTO admine(nom,prenom,email,mdp) VALUES(?,?,?,?)");
                 $req->execute(array($nom,$prenom,$email,$pwd));
-                $_SESSION['auth'] = true;
-                $_SESSION['nom'] = $nom;
-                $_SESSION['prenom'] = $prenom;
-                $_SESSION['email'] = $email;
+        
                 header('Location: ./pages/auth.php');}
             }
             else{

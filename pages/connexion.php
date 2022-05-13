@@ -41,7 +41,7 @@
             <div class=" col-md-12 d-flex justify-content-center">
               <div class="card col-md-10 mb-3 etudiant">
                 <div class="card-body d-flex justify-content-md-center">
-                  <form action="../index.php" method="post">
+                  <form action="" method="post">
                     <div class="form-group  formins">
                       <input type="text" class="form-control" id="exampleInputnom" name="nom" placeholder="nom" required>
                       <input type="text" class="form-control" id="exampleInputnom" name="prenom" placeholder="prenom" required>

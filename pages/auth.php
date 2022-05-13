@@ -39,11 +39,18 @@
                                         <div class="col-md-3 imag">
                                             <img src="../images/Admin.png">
                                         </div>
-                                        <form action="" method="post" class="col-md-6 offset-md-2">
+                                        <form action="../back-end/signin.php" method="post" class="col-md-6 offset-md-2">
                                             <div class="form-group  formins">
                                                 <input type="text" class="form-control" id="email" name="email" placeholder="Entrez votre Email" required>
-                                                <input type="text" class="form-control" id="mdp" name="mdp" placeholder="Mot de passe" required>
-                                                <button type="submit" class="btn bouton mb-2">Connecter</button>
+                                                <input type="text" class="form-control" id="mdp" name="pwd" placeholder="Mot de passe" required>
+                                                <button type="submit" class="btn bouton mb-2" name="connecter">Connecter</button>
+                                                <?php
+                                                //renvoyer un message d'erreur si les champs sont vides
+                                                
+
+                                                if (isset($error_msg)) {
+                                                    echo   "<span class='alert alert-danger text-center erreur' id='error'>$error_msg</span>";
+                                                } ?>
                                             </div>
 
                                         </form>
@@ -67,7 +74,13 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        function display() {
+            document.getElementById("error").style.display = "none";
+        }
 
+        setTimeout(display, 3000);
+    </script>
 
 </body>
 
