@@ -1,41 +1,34 @@
 
 
 <?php
+require 'conndb.php';
 
-include 'back-end/conndb.php';
 if (isset($_POST['valider'])) {
+  
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $email = $_POST['email'];
+    $pwd = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
+    $cfpwd = $_POST['cfpwd'];
 
-    if (!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['pwd'])) {
-        $nom = $_POST['nom'];
-        $prenom = $_POST['prenom'];
-        $email = $_POST['email'];
-        $pwd = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
-        $cfpwd = $_POST['cfpwd'];
-
-
-
-        $ifUserexist = $bdd->prepare("SELECT * FROM admine WHERE email=?");
-        $ifUserexist->execute(array($email));
-
-        if ($ifUserexist->rowCount() == 0) {
-            $insert = $base->prepare("INSERT INTO admine (nom,prenom,email,pwd) VALUES(?,?,?,?)");
-            $insert->execute(array($nom, $prenom, $email, $pwd));
-           
-
-            $getInfo = $base->prepare("SELECT nom,prenom,email FROM admine WHERE nom=?" and "prenom=?" and "email=?");
-            $getInfo->execute(array($nom, $prenom, $email));
-            $info = $getInfo->fetch();
-
-            $_SESSION['auth'] = true;
-            $_SESSION['nom'] = $info['nom'];
-            $_SESSION['prenom'] = $info['prenom'];
-            $_SESSION['email'] = $info['email'];
-            header('Location: ../index.php');
-        } else {
-            $error_msg = "L'utilisateur existe deja";
+    if (!empty($nom) && !empty($prenom) && !empty($email) && !empty($pwd) && !empty($cfpwd)) {
+   
+        
+          // verifier si l'email existe deja
+            $req = $bdd->prepare("SELECT * FROM admine WHERE email = ?");
+            $req->execute(array($email));
+            $user = $req->rowCount();
+            if ($user==0) { // si l'email n'existe pas
+                $req = $bdd->prepare("INSERT INTO admine(nom,prenom,email,mdp) VALUES(?,?,?,?)");
+                $req->execute(array($nom,$prenom,$email,$pwd));
+                $_SESSION['auth'] = true;
+                $_SESSION['nom'] = $nom;
+                $_SESSION['prenom'] = $prenom;
+                $_SESSION['email'] = $email;
+                header('Location: ./pages/auth.php');}
+            }
+            else{
+                $error_msg = "verifier vos champs";
+            }
         }
-    } else {
-        $error_msg = "veuillez remplir tous les champs";
-    }
-}
 ?>
