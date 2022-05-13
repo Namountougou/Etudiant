@@ -39,7 +39,7 @@
                                         <div class="col-md-3 imag">
                                             <img src="../images/Admin.png">
                                         </div>
-                                        <form action="../index.php" method="post" class="col-md-6 offset-md-2">
+                                        <form action="" method="post" class="col-md-6 offset-md-2">
                                             <div class="form-group  formins">
                                                 <input type="text" class="form-control" id="email" name="email" placeholder="Entrez votre Email" required>
                                                 <input type="text" class="form-control" id="mdp" name="mdp" placeholder="Mot de passe" required>
