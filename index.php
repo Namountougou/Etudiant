@@ -13,6 +13,7 @@
 <html>
 
 <body>
+    <?php include "./back-end/conndb.php"?>
     <div class=" principe d-flex align-items-center col-md-10 offset-md-1">
          <div class="container col-md-12 col-sm-12 bgi" style="background-image: url('./images/oks.jpg')">
         <div class="row">
@@ -26,16 +27,19 @@
             <div class=" card col-md-4 rounded-3  saisi">
                 <div class="card-body">
                     <img src="./images/iconedoc.png" class="col-md-1 offset-md-4 col-sm-2 logdoc">
-                    <form action="" method="post" class="d-flex justify-content-md-center">
+                    <form action="./back-end/signup.php" method="post" class="d-flex justify-content-md-center">
                         <div class="form-group border-4 border-bottom  formins">
                             <input type="text" class="form-control" id="exampleInputnom" name="nom" placeholder="nom">
                             <input type="text" class="form-control" id="exampleInputnom" name="prenom" placeholder="prenom">
                             <input type="text" class="form-control" id="exampleInputnom" name="email" placeholder="email">
-                            <input type="password" class="form-control" id="exampleInputnom" name="password" placeholder="password">
-                            <input type="password" class="form-control" id="exampleInputnom" name="confirmpassword" placeholder="confirmpassword">
-                            <button type="submit" class="btn bouton offset-md-2">Submit</button>
+                            <input type="password" class="form-control" id="exampleInputnom" name="pwd" placeholder="password">
+                            <input type="password" class="form-control" id="exampleInputnom" name="cfpwd" placeholder="confirmpassword">
+                            <button type="submit" class="btn bouton offset-md-2" name="valider">Submit</button>
                         </div>
                     </form>
+                    <?php if (isset($error_msg)) { 
+                    echo   "<div class='alert alert-danger'>.$error_msg.</div>";}
+                    ?>
                 </div>
             </div>
         </div>
