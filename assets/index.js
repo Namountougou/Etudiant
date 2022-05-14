@@ -8,24 +8,19 @@ $("#Radio2").click(function () {
 
 // dfghjklxcvbnm,.xcbnm,
 
+// code accordion pour la liste
 
+$(function () {
+  $(".jQuery_accordion").accordion({
+    active: false,
+    collapsible: true,
+  });
+});
 
+// Code pour le tableau de la liste
+$(document).ready(function () {
+  $("#mytable").DataTable();
+});
 
+//pour autocomplete
 
-
-// code accordion pour la liste 
-
-  
-        $(function() {
-          
-            $(".jQuery_accordion").accordion({
-              active: false,
-              collapsible: true,
-            });
-        });
-
-// Code pour le tableau de la liste 
-// $(document).ready(function () {
-//   $("#mytable").DataTable();
-// });       
-  
