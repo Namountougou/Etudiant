@@ -10,7 +10,7 @@ body {
   align-items: center !important;
 }
 .principe {
-  margin-top: 50px !important;
+  margin-top: 20px !important;
   background-color: #8888885e !important;
   border-radius: 5px !important;
   box-shadow: 10px 10px 10px #000000 !important;
@@ -103,7 +103,7 @@ body {
 
 /* code de la page de connexion  */
 .menaj {
-  margin-top: 50px !important;
+  margin-top: 20px !important;
   height: 100% !important;
 }
 .menaj h2 {
@@ -115,14 +115,14 @@ body {
   font-size: 3rem;
 }
 .menu {
-  height: 400px !important;
+  height: 450px !important;
   width: 175px !important;
   background-color: #036e0bbe !important;
   box-shadow: 10px 10px 20px #000 !important;
   border-radius: 10px !important;
 }
 .etudiant {
-  height: 400px !important;
+  height: 450px !important;
   background-color: #4141414a !important;
   box-shadow: 10px 10px 20px #000 !important;
   background-image: url("../images/etudiante.png") !important;

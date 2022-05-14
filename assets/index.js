@@ -17,10 +17,10 @@ $(function () {
   });
 });
 
-// Code pour le tableau de la liste
-$(document).ready(function () {
-  $("#mytable").DataTable();
+// faire un setTimeout pour la class coca
+$(function () {
+  setTimeout(function () {
+    $(".coca").hide();
+  }, 3000);
 });
-
 //pour autocomplete
-

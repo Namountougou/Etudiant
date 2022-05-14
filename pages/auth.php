@@ -46,11 +46,11 @@
                                                 <button type="submit" class="btn bouton mb-2" name="connecter">Connecter</button>
                                                 <?php
                                                 //renvoyer un message d'erreur si les champs sont vides
-                                                
 
-                                                if (isset($error_msg)) {
-                                                    echo   "<span class='alert alert-danger text-center erreur' id='error'>$error_msg</span>";
-                                                } ?>
+
+                                                if (isset($_GET['error_msg'])) {
+                                                    echo  '<div class=" bg-danger col-md-6 offset-md-3 coca">"' . $_GET['error_msg'] . '"</div>';
+                                                }?>
                                             </div>
 
                                         </form>

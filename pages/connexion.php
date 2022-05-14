@@ -60,19 +60,19 @@
             <div class=" col-md-12 d-flex justify-content-center">
 
               <div class="card col-md-10 mb-3 etudiant">
-                <?php
+                
+                  <?php
 
 
-               
-                if (isset($_GET['error_msg'])) {
-                  echo  '<div class=" bg-danger col-md-6 offset-md-3 coca">"' . $_GET['error_msg'] . '"</div>';
-                }
-                if (isset($_GET['success_msg'])) {
-                  echo  '<div class=bg-success  col-md-6 offset-md-3 coca">"' . $_GET['success_msg'] . '"</div>';
-                }
+                  if (isset($_GET['error_msg'])) {
+                    echo  "<div class=' alert text-light bg-danger col-md-6 offset-md-3 coca'>.$_GET[error_msg].</div>";
+                  }
+                  if (isset($_GET['success_msg'])) {
+                    echo  "<div class='alert bg-success text-light col-md-5 offset-md-4 coca' id='coca'>.$_GET[success_msg].</div>";
+                  }
 
 
-                ?>
+                  ?>
                 <div class="card-body d-flex justify-content-md-center">
                   <form action="../back-end/etudiant.php" method="post">
                     <div class="form-group  formins">
@@ -140,7 +140,9 @@
         </div>
       </div>
     </div>
+    <script>
 
+    </script>
 </body>
 
 </html>

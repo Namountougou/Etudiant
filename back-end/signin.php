@@ -11,7 +11,7 @@ if (isset($_POST['connecter'])){
 
         $ifuserexist= $bdd->prepare("SELECT * FROM admine WHERE email = ? AND mdp = ?");
         $ifuserexist->execute(array($email,$pwd));
-        $userexist=$ifuserexist->rowCount();
+        $userexist=$ifuserexist->rowCount(); 
         if($userexist==1){
             $_SESSION['auth'] = true;
             $conn=$_SESSION['auth'];
@@ -21,7 +21,7 @@ if (isset($_POST['connecter'])){
  }
     else{
         $error_msg = "verifier vos champs";
-        header('Location: ../pages/auth.php');
+            header('Location: ../pages/auth.php?error_msg="' . $error_msg . '"');
         
     }
   
