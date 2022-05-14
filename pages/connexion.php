@@ -24,11 +24,11 @@
           <?php
           require '../back-end/conndb.php';
 
-          $search = $bdd->query("SELECT * FROM admine");
+          $search = $bdd->query("SELECT * FROM tuteur");
           $search->execute();
           $result = $search->fetchAll();
           foreach ($result as $tuteur) {
-            echo '"' . $tuteur['nom'] . ',' . $tuteur['prenom'] . ',' . $tuteur['email'] . '", ';
+            echo '"' . $tuteur['nom'] . ',' . $tuteur['prenom'] . ',' . $tuteur['telephone'] . '", ';
           }; ?>
         ]
       });
@@ -44,6 +44,7 @@
         </div>
       </div>
       <div class="row">
+
         <div class="col-md-12 d-flex menaj">
           <div class="col-md-2 col-sm-2 text-dark text-center">
             <h2>MENU</h2>
@@ -57,22 +58,37 @@
           <div class="col-md-10 text-dark text-center">
             <h2>AJOUTER UN ETUDIANT </h2>
             <div class=" col-md-12 d-flex justify-content-center">
+
               <div class="card col-md-10 mb-3 etudiant">
+                <?php
+
+
+               
+                if (isset($_GET['error_msg'])) {
+                  echo  '<div class=" bg-danger col-md-6 offset-md-3 coca">"' . $_GET['error_msg'] . '"</div>';
+                }
+                if (isset($_GET['success_msg'])) {
+                  echo  '<div class=bg-success  col-md-6 offset-md-3 coca">"' . $_GET['success_msg'] . '"</div>';
+                }
+
+
+                ?>
                 <div class="card-body d-flex justify-content-md-center">
-                  <form action="" method="post">
+                  <form action="../back-end/etudiant.php" method="post">
                     <div class="form-group  formins">
-                      <input type="text" class="form-control" id="exampleInputnom" name="nom" placeholder="nom" required>
-                      <input type="text" class="form-control" id="exampleInputnom" name="prenom" placeholder="prenom" required>
-                      <input type="email" class="form-control" id="exampleInputnom" name="email" placeholder="email" required>
-                      <input type="text" class="form-control" id="exampleInputnom" name="password" placeholder="Teléphone" required>
-                      <input class="form-check-input mt-3" type="radio" name="Radio" id="Radio1" value="true">
+                      <input type="text" class="form-control" id="nom" name="nom" placeholder="nom" required>
+                      <input type="text" class="form-control" id="prenom" name="prenom" placeholder="prenom" required>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="email" required>
+                      <input type="date" class="form-control" id="date_n" name="date_n" placeholder="Date de naissance" required>
+                      <input type="text" class="form-control" id="telephone" name="telephone" placeholder="Teléphone" required>
+                      <input class="form-check-input mt-3" type="radio" name="radio" id="Radio1" value="true">
                       <label class="form-check-label mt-3" for="inlineRadio1">oui</label>
-                      <input class="form-check-input mt-3" type="radio" name="Radio" id="Radio2" value="false" checked>
+                      <input class="form-check-input mt-3" type="radio" name="radio" id="Radio2" value="false" checked>
                       <label class="form-check-label mt-3" for="inlineRadio2">non</label>
                     </div>
                     <div id="tuteur">
                       <div class="form-group d-flex ">
-                        <input id="tags" class="form-control " placeholder="Tuteur"> <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                        <input id="tags" class="form-control " placeholder="Tuteur" name="tuteur" value="id"> <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
                           +
                         </button>
 
@@ -81,10 +97,10 @@
 
                     </div>
 
-                    <div class="row"> <button type="submit" class="btn bouton mb-2">Ajouter</button> </div>
-
+                    <div class="row"> <button type="submit" class="btn bouton mb-2" name="save">Ajouter</button> </div>
+                  </form>
                 </div>
-                </form>
+
 
 
               </div>
@@ -100,25 +116,24 @@
 
 
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade col-md-8" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
+          <div class="modal-header d-flex justify-content-center">
             <h5 class="modal-title" id="exampleModalLabel">TUTEUR</h5>
-            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+
           </div>
           <div class="modal-body">
-            <form>
-              <div class="form-group col-md-6">
+            <form action="../back-end/tuteur.php" method="post">
+              <div class="form-group col-md-6 offset-md-3">
                 <input type="text" class="form-control" id="nom" name="nom" placeholder="nom" required>
                 <input type="text" class="form-control" id="prenom" name="prenom" placeholder="prenom" required>
                 <input type="email" class="form-control" id="email" name="email" placeholder="email" required>
                 <input type="text" class="form-control" id="tel" name="password" placeholder="Teléphone" required>
               </div>
-
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+          <div class="modal-footer d-flex justify-content-evenly">
+            <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Enregistrer</button>
             </form>
           </div>

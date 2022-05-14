@@ -22,7 +22,7 @@ if (isset($_POST['valider'])) {
                 $req = $bdd->prepare("INSERT INTO admine(nom,prenom,email,mdp) VALUES(?,?,?,?)");
                 $req->execute(array($nom,$prenom,$email,$pwd));
         
-                header('Location: ./pages/auth.php');}
+                header('Location: ./pages/auth.php?signup=1');}
             }
             else{
                 $error_msg = "verifier vos champs";
