@@ -16,7 +16,7 @@ if (isset($_POST['connecter'])){
             $_SESSION['auth'] = true;
             $conn=$_SESSION['auth'];
             $_SESSION['email'] = $email;
-            header('Location: ../pages/connexion.php');
+            header('Location: ../pages/accueil.php');
 
  }
     else{

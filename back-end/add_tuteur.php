@@ -14,12 +14,12 @@ if ($user==0) { // si le tuteur n'existe pas
 $req = $bdd->prepare("INSERT INTO tuteur(nom,prenom,email,telephone) VALUES(?,?,?,?)");
 $req->execute(array($nom,$prenom,$email,$telephone));
 $success_msg = "Tuteur ajouté avec succès";
-header("Location: ../pages/connexion.php?success_msg=  $success_msg ");
+header("Location: ../pages/accueil.php?success_msg=  $success_msg ");
 
 }
 else{ // si le tuteur existe
 $error_msg = "Le tuteur existe deja";
-header("Location: ../pages/connexion.php?error_msg= $error_msg");
+header("Location: ../pages/accueil.php?error_msg= $error_msg");
 }
 
 

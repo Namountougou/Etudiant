@@ -15,6 +15,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="../assets/jquery-ui-1.13.1.custom/jquery-ui.min.js"></script>
     <script type="text/javascript" src="../assets/DataTables/datatables.min.js"></script>
+    <script src="../assets/mdb5-free-standard/js/mdb.min.js" defer></script>
 
 </head>
 
@@ -95,7 +96,7 @@
                             echo ' 
                            
                                 <td >
-                                 <a href="../back-end/modifier.php?id=' . $list['id'] . '">   <span class="icon"> <i class="fas fa-user-pen"></i></span></a>
+                                  <a href="../pages/modifier.php?id=' . $list['id'] . '"> <span class="icon">  <i class="fas fa-user-pen"></i></a>
                                   <a href="../back-end/delete.php?id=' . $list['id'] . '"> <span class="icon"> <i class="fas fa-trash-alt"></i></span></a>
                                 </td>
                             </tr>
@@ -108,7 +109,7 @@
                             echo ' 
                            
                                 <td>
-                                 <a href="../back-end/modifier.php?id=' . $list['id'] . '">   <span class="icon"> <i class="fas fa-user-pen"></i></span></a>
+                                <a href="../pages/modifier.php?id=' . $list['id'] . '"> <span class="icon">  <i class="fas fa-user-pen"></i></a>
                                   <a href="../back-end/delete.php?id=' . $list['id'] . '"> <span class="icon"> <i class="fas fa-trash-alt"></i></span></a>
                                 </td>
                             </tr>
@@ -137,9 +138,35 @@
         <h4>&copy;UFR SDS/UJKZ</h4>
     </div>
 
-    <script>
 
-    </script>
+
+   <div class="modal fade col-md-8" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-center">
+                    <h5 class="modal-title" id="exampleModalLabel">TUTEUR</h5>
+
+                </div>
+                
+                <div class="modal-body">
+                    <form action="../back-end/add_tuteur.php" method="post">
+                        <div class="form-group col-md-6 offset-md-3">
+                            <input  value="'.$list['nom']. '" class="form-control" id="nom" name="nom" required>
+                            <input  value="' . $list['prenom'] . '" class="form-control" id="prenom" name="prenom" required>
+                            <input  value="' . $list['date'] . '" class="form-control" id="date" name="date_n" required>
+                            <input value="' . $list['email'] . '" class="form-control" id="email" name="email" required>
+                            <input value="' . $list['telephone'] . '" class="form-control" id="telephone" name="telephone" required>
+                            <input  value="' . $list['id_tuteur'] . '" class="form-control" id="id_tuteur" name="prenom"  required>
+                        </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-evenly">
+                    <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" name="add_tuteur">Enregistrer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 

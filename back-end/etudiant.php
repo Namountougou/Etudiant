@@ -1,5 +1,6 @@
 <?php
 require 'conndb.php';
+require 'security.php';
 
 if (isset($_POST['save'])){
 if(!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email'] && !empty($_POST['telephone']) && !empty($_POST['radio']))){
@@ -21,11 +22,11 @@ if(!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email'] &
             $req = $bdd->prepare("INSERT INTO etudiant(nom,prenom,date_n,email,telephone,id_tuteur) VALUES(?,?,?,?,?,?)");
             $req->execute(array($nom,$prenom,$date_n,$email,$telephone,$id_tuteur));
             $success_msg = "Etudiant avec tuteur ajouté avec succès";
-            header("Location: ../pages/connexion.php?success_msg=  $success_msg ");
+            header("Location: ../pages/accueil.php?success_msg=  $success_msg ");
         }
         else{
             $error_msg = "L'Etudiant existe deja";
-            header("Location: ../pages/connexion.php?error_msg= $error_msg");
+            header("Location: ../pages/accueil.php?error_msg= $error_msg");
         }
     }
    //si l'etudiant n'a pas de tuteur
@@ -38,18 +39,18 @@ if(!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email'] &
             $req = $bdd->prepare("INSERT INTO etudiant(nom,prenom,date_n,email,telephone) VALUES(?,?,?,?,?)");
             $req->execute(array($nom,$prenom,$date_n,$email,$telephone));
                 $success_msg = "Etudiant sans tuteur ajouté avec succès";
-                header("Location: ../pages/connexion.php?success_msg= $success_msg");
+                header("Location: ../pages/accueil.php?success_msg= $success_msg");
         }
         else{
                 $error_msg = "L'Etudiant existe deja";
-                header("Location: ../pages/connexion.php?error_msg=$error_msg");
+                header("Location: ../pages/accueil.php?error_msg=$error_msg");
         }
     }      
 
 }
 else{
     $error_msg = "verifier vos champs";
-    header("Location: ../pages/connexion.php?error_msg=  $error_msg");
+    header("Location: ../pages/accueil.php?error_msg=  $error_msg");
 }
 }
 

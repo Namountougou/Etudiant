@@ -50,8 +50,8 @@
             <h2>MENU</h2>
             <div class="card menu">
               <div class="card-body">
-    
-             <a href="./liste.php">  <button type="submit" class="btn btn-secondary mt-3">Lister</button></a>
+
+                <a href="./liste.php"> <button type="submit" class="btn btn-secondary mt-3">Lister</button></a>
                 <button type="button" class="btn btn-primary mt-3" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Tuteur</button>
               </div>
             </div>
@@ -63,20 +63,17 @@
               <div class="card col-md-10 mb-3 etudiant">
 
                 <?php
-
-
                 if (isset($_GET['error_msg'])) {
                   echo  "<span class='coca bg-danger'>$_GET[error_msg]</span>";
                 }
                 if (isset($_GET['success_msg'])) {
                   echo  "<span class='coca bg-success'>$_GET[success_msg]</span>";
                 }
-
-
                 ?>
                 <div class="card-body d-flex justify-content-md-center">
                   <form action="../back-end/etudiant.php" method="post">
                     <div class="form-group  formins">
+                      <a href="./back-end/Logout.php">Deconnexion</a>
                       <input type="text" class="form-control" id="nom" name="nom" placeholder="nom" required>
                       <input type="text" class="form-control" id="prenom" name="prenom" placeholder="prenom" required>
                       <input type="email" class="form-control" id="email" name="email" placeholder="email" required>
@@ -90,6 +87,7 @@
                     <div id="tuteur">
                       <div class="form-group d-flex ">
                         <input id="tags" class="form-control " placeholder="Tuteur" name="tuteur"> <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+
                           <i class="fa-solid fa-user-plus"></i>
                         </button>
 
@@ -117,33 +115,8 @@
 
 
 
-    <div class="modal fade col-md-8" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header d-flex justify-content-center">
-            <h5 class="modal-title" id="exampleModalLabel">TUTEUR</h5>
-
-          </div>
-          <div class="modal-body">
-            <form action="../back-end/add_tuteur.php" method="post">
-              <div class="form-group col-md-6 offset-md-3">
-                <input type="text" class="form-control" id="nom" name="nom" placeholder="nom" required>
-                <input type="text" class="form-control" id="prenom" name="prenom" placeholder="prenom" required>
-                <input type="email" class="form-control" id="email" name="email" placeholder="email" required>
-                <input type="" class="form-control" id="telephone" name="telephone" placeholder="Teléphone" required>
-              </div>
-          </div>
-          <div class="modal-footer d-flex justify-content-evenly">
-            <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" name="add_tuteur">Enregistrer</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script>
-
-    </script>
+   
+   
 </body>
 
 </html>
