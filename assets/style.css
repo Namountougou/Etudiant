@@ -92,6 +92,12 @@ body {
   width: 75px !important;
   height: 60px !important;
 }
+.bttutor {
+  width: 80px !important;
+  height: 30px !important;
+  font-size: 2rem !important;
+  font-weight: bold !important;
+}
 
 /* code du footer */
 .footer {
@@ -150,13 +156,24 @@ body {
   font-weight: bold !important;
   font-size: 2rem !important;
 }
-#exampleModal{
+#exampleModal {
   background-color: #55545466 !important;
   box-shadow: 10px 10px 20px #000 !important;
   border-radius: 10px !important;
   width: 400px !important;
 }
-.coca{
-  height: 40px !important;
+.coca {
+  height: 50px !important;
+  font-size: 2rem !important;
+  font-weight: bold !important;
+  color: white !important;
 }
-
+.icon {
+  height: 15px !important;
+  width: 15px !important;
+  font-size: 1.2rem !important;
+  font-weight: bold !important;
+  background-color: #010101 !important;
+  border-radius: 5px !important;
+  text-decoration: none !important;
+}

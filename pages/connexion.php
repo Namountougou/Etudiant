@@ -49,9 +49,10 @@
           <div class="col-md-2 col-sm-2 text-dark text-center">
             <h2>MENU</h2>
             <div class="card menu">
-              <div class="card-body"> <button type="submit" class="btn btn-primary mt-2">Ajouter</button>
-                <button type="submit" class="btn btn-primary mt-3">Lister</button>
-                <button type="submit" class="btn btn-primary mt-3">Tuteur</button>
+              <div class="card-body">
+    
+             <a href="./liste.php">  <button type="submit" class="btn btn-secondary mt-3">Lister</button></a>
+                <button type="button" class="btn btn-primary mt-3" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Tuteur</button>
               </div>
             </div>
           </div>
@@ -60,19 +61,19 @@
             <div class=" col-md-12 d-flex justify-content-center">
 
               <div class="card col-md-10 mb-3 etudiant">
-                
-                  <?php
+
+                <?php
 
 
-                  if (isset($_GET['error_msg'])) {
-                    echo  "<div class=' alert text-light bg-danger col-md-6 offset-md-3 coca'>.$_GET[error_msg].</div>";
-                  }
-                  if (isset($_GET['success_msg'])) {
-                    echo  "<div class='alert bg-success text-light col-md-5 offset-md-4 coca' id='coca'>.$_GET[success_msg].</div>";
-                  }
+                if (isset($_GET['error_msg'])) {
+                  echo  "<span class='coca bg-danger'>$_GET[error_msg]</span>";
+                }
+                if (isset($_GET['success_msg'])) {
+                  echo  "<span class='coca bg-success'>$_GET[success_msg]</span>";
+                }
 
 
-                  ?>
+                ?>
                 <div class="card-body d-flex justify-content-md-center">
                   <form action="../back-end/etudiant.php" method="post">
                     <div class="form-group  formins">
@@ -88,8 +89,8 @@
                     </div>
                     <div id="tuteur">
                       <div class="form-group d-flex ">
-                        <input id="tags" class="form-control " placeholder="Tuteur" name="tuteur" value="id"> <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                          +
+                        <input id="tags" class="form-control " placeholder="Tuteur" name="tuteur"> <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                          <i class="fa-solid fa-user-plus"></i>
                         </button>
 
 
@@ -124,17 +125,17 @@
 
           </div>
           <div class="modal-body">
-            <form action="../back-end/tuteur.php" method="post">
+            <form action="../back-end/add_tuteur.php" method="post">
               <div class="form-group col-md-6 offset-md-3">
                 <input type="text" class="form-control" id="nom" name="nom" placeholder="nom" required>
                 <input type="text" class="form-control" id="prenom" name="prenom" placeholder="prenom" required>
                 <input type="email" class="form-control" id="email" name="email" placeholder="email" required>
-                <input type="text" class="form-control" id="tel" name="password" placeholder="Teléphone" required>
+                <input type="" class="form-control" id="telephone" name="telephone" placeholder="Teléphone" required>
               </div>
           </div>
           <div class="modal-footer d-flex justify-content-evenly">
             <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Enregistrer</button>
+            <button type="submit" class="btn btn-primary" name="add_tuteur">Enregistrer</button>
             </form>
           </div>
         </div>

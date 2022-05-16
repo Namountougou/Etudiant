@@ -21,7 +21,7 @@ if (isset($_POST['connecter'])){
  }
     else{
         $error_msg = "verifier vos champs";
-            header('Location: ../pages/auth.php?error_msg="' . $error_msg . '"');
+            header("Location: ../pages/auth.php?error_msg=' . $error_msg . '");
         
     }
   

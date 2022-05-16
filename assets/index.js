@@ -10,12 +10,7 @@ $("#Radio2").click(function () {
 
 // code accordion pour la liste
 
-$(function () {
-  $(".jQuery_accordion").accordion({
-    active: false,
-    collapsible: true,
-  });
-});
+
 
 // faire un setTimeout pour la class coca
 $(function () {

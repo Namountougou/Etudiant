@@ -22,7 +22,7 @@
 <title>Liste</title>
 
 <body>
-    <div class=" principe d-flex align-items-center col-md-10 offset-md-1 ">
+    <div class="principe d-flex align-items-center col-md-10 offset-md-1" >
         <div class="container-fluid bgi">
             <div class="row">
                 <div class="col-md-12 d-flex log">
@@ -32,10 +32,16 @@
                 </div>
             </div>
             <div class="coco d-flex">
-                <div class="row col-md-10">
+                <div class="row col-md-11">
+                    <?php
 
-                    <table class="table table-hover table-striped" id="mytable">
-                        <thead>
+                    require '../back-end/conndb.php';
+
+                    $reponse = $bdd->prepare("SELECT * FROM etudiant");
+                    $reponse->execute();
+
+                    echo '<table class="table table-hover table-striped" id="mytable">';
+                     echo'   <thead>
                             <tr>
                                 <th scope="col">Order</th>
                                 <th scope="col">Nom</th>
@@ -44,170 +50,95 @@
                                 <th scope="col">Tel</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Tuteur</th>
+                                <th scope="col">Action</th>
                             </tr>
-                        </thead>
-                        <tbody>
+                        </thead>';
+                    $i = 1;
+                    while ($list = $reponse->fetch()) {
+
+                        
+                        echo '
+                         <tbody>
                             <tr>
-                                <td scope="col">1</td>
-                                <td scope="col">LY</td>
-                                <td scope="col">Kampa</td>
-                                <td scope="col">12-11-2001</td>
-                                <td scope="col">71-12-25-54</td>
-                                <td scope="col">kampacheick@gmail.com</td>
-                                <td scope="col">
-                                    <div class="jQuery_accordion">
-                                        <h3>Tuteur</h3>
-                                        <ul>
-                                            <li>
-                                                <p>Nom</p>
-                                                <p>Prenom</p>
-                                                <p>Tel</p>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                 <td>' . $i . '</td>
+                                <td>' . $list['nom'] . '</td>
+                                <td>' . $list['prenom'] . '</td>
+                                <td>' . $list['date_n'] . '</td>
+                                <td>' . $list['telephone'] . '</td>
+                                <td>' . $list['email'] . '</td>
+
+                                
+                                ';
+                if(isset($list['id_tuteur'])){
+                                   
+                        echo '<td>  <div class="jQuery_accordion text-center bg-primary" style="width:75px">
+                            <h3>tuteur</h3>';
+
+                        $tutlist=$bdd->query("SELECT * FROM tuteur WHERE telephone= $list[id_tuteur]");
+                        $tut=$tutlist->fetchAll();
+                            foreach ($tut as $tuteur) {
+                            echo '
+                                      
+                            <ul style="width:250px">
+                           
+                                <li>' . $tuteur['nom'] . '</li>
+                                <li>' . $tuteur['prenom'] . '</li>
+                               <li> ' . $tuteur['telephone'] . '</li>
+                               <li> ' . $tuteur['email'] . '</li>
+                                </ul>
+                            ';}
+                    
+                        
+                       
+echo '</div></td>';
+                        echo ' 
+                           
+                                <td >
+                                 <a href="#">   <span class="icon"> <i class="fas fa-user-pen"></i></span></a>
+                                  <a href="#"> <span class="icon"> <i class="fas fa-trash-alt"></i></span></a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td scope="col">1</td>
-                                <td scope="col">LY</td>
-                                <td scope="col">Kampa</td>
-                                <td scope="col">12-11-2001</td>
-                                <td scope="col">71-12-25-54</td>
-                                <td scope="col">kampacheick@gmail.com</td>
-                                <td scope="col">
-
-                                    <div class="jQuery_accordion">
-                                        <h3>Tuteur</h3>
-                                        <ul>
-                                            <li>
-                                                <p>Nom :</p>
-                                                <p>Prenom :</p>
-                                                <p>Tel :</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-
-
+                        </tbody>';
+                        $i++;
+                }
+                else{ echo '<td class="text-center bg-danger" style="width:75px">  
+                            <p>vide</p>      
+                        </td>';
+                        echo ' 
+                           
+                                <td>
+                                 <a href="#">   <span class="icon"> <i class="fas fa-user-pen"></i></span></a>
+                                  <a href="#"> <span class="icon"> <i class="fas fa-trash-alt"></i></span></a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td scope="col">1</td>
-                                <td scope="col">LY</td>
-                                <td scope="col">Kampa</td>
-                                <td scope="col">12-11-2001</td>
-                                <td scope="col">71-12-25-54</td>
-                                <td scope="col">kampacheick@gmail.com</td>
-                                <td scope="col">
+                        </tbody>';
+                        $i++;
+                }
+                    }
+                    echo '</table>';
+                    ?>
 
-                                    <div class="jQuery_accordion">
-                                        <h3>Tuteur</h3>
-                                        <ul>
-                                            <li>
-                                                <p>Nom :</p>
-                                                <p>Prenom :</p>
-                                                <p>Tel :</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td scope="col">1</td>
-                                <td scope="col">LY</td>
-                                <td scope="col">Kampa</td>
-                                <td scope="col">12-11-2001</td>
-                                <td scope="col">71-12-25-54</td>
-                                <td scope="col">kampacheick@gmail.com</td>
-                                <td scope="col">
-
-                                    <div class="jQuery_accordion">
-                                        <h3>Tuteur</h3>
-                                        <ul>
-                                            <li>
-                                                <p>Nom :</p>
-                                                <p>Prenom :</p>
-                                                <p>Tel :</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td scope="col">2</td>
-                                <td scope="col">Ilboudo</td>
-                                <td scope="col">Souley</td>
-                                <td scope="col">12-11-2002</td>
-                                <td scope="col">07-12-25-54</td>
-                                <td scope="col">ilboudocheick@gmail.com</td>
-                                <td scope="col">
-
-                                    <div class="jQuery_accordion">
-                                        <h3>Tuteur</h3>
-                                        <ul>
-                                            <li>
-                                                <p>Nom :</p>
-                                                <p>Prenom :</p>
-                                                <p>Tel :</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td scope="col">1</td>
-                                <td scope="col">LY</td>
-                                <td scope="col">Kampa</td>
-                                <td scope="col">12-11-2001</td>
-                                <td scope="col">71-12-25-54</td>
-                                <td scope="col">kampacheick@gmail.com</td>
-                                <td scope="col">
-
-                                    <div class="jQuery_accordion">
-                                        <h3>Tuteur</h3>
-                                        <ul>
-                                            <li>
-                                                <p>Nom :</p>
-                                                <p>Prenom :</p>
-                                                <p>Tel :</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-
-
-                                </td>
-                            </tr>
-
-
-
-                        </tbody>
-                    </table>
-
+           
                 </div>
-                <div class="bout col-md-1 offset-md-1  justify-content-center align-items-center">
-                    <a href="#"> <button type="submit" class="btn boutli  text-center">+</button></a>
-                        <a href="#"> <button type="submit" class="btn boutfli  text-center">X</button></a>
-                </div>
+
 
 
 
             </div>
-            <div class="row text-center text-light bg-success footer">
-                <h4>&copy;UFR SDS/UJKZ</h4>
+            <div class=" row d-flex bout">
+                <a href="#"> <button type="submit" class="btn boutli  text-center">+</button></a>
+                <a href="#"> <button type="submit" class="btn boutfli  text-center">X</button></a>
             </div>
         </div>
+
+    </div>
+    <div class="row text-center text-light bg-success footer">
+        <h4>&copy;UFR SDS/UJKZ</h4>
     </div>
 
+    <script>
+
+    </script>
 </body>
 
 
