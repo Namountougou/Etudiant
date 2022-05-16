@@ -22,7 +22,7 @@
 <title>Liste</title>
 
 <body>
-    <div class="principe d-flex align-items-center col-md-10 offset-md-1" >
+    <div class="principe d-flex align-items-center col-md-10 offset-md-1">
         <div class="container-fluid bgi">
             <div class="row">
                 <div class="col-md-12 d-flex log">
@@ -40,8 +40,8 @@
                     $reponse = $bdd->prepare("SELECT * FROM etudiant");
                     $reponse->execute();
 
-                    echo '<table class="table table-hover table-striped" id="mytable">';
-                     echo'   <thead>
+                    echo '<table class="table table-hover table-striped" id="mytable">
+                    <thead>
                             <tr>
                                 <th scope="col">Order</th>
                                 <th scope="col">Nom</th>
@@ -56,7 +56,7 @@
                     $i = 1;
                     while ($list = $reponse->fetch()) {
 
-                        
+
                         echo '
                          <tbody>
                             <tr>
@@ -69,66 +69,67 @@
 
                                 
                                 ';
-                if(isset($list['id_tuteur'])){
-                                   
-                        echo '<td>  <div class="jQuery_accordion text-center bg-primary" style="width:75px">
+                        if (isset($list['id_tuteur'])) {
+
+                            echo '<td>  <div class="jQuery_accordion text-center bg-primary" style="width:75px">
                             <h3>tuteur</h3>';
 
-                        $tutlist=$bdd->query("SELECT * FROM tuteur WHERE telephone= $list[id_tuteur]");
-                        $tut=$tutlist->fetchAll();
+                            $tutlist = $bdd->query("SELECT * FROM tuteur WHERE telephone= $list[id_tuteur]");
+                            $tut = $tutlist->fetchAll();
                             foreach ($tut as $tuteur) {
-                            echo '
+                                echo '
                                       
-                            <ul style="width:250px">
+                            <ul style="width:200px">
                            
                                 <li>' . $tuteur['nom'] . '</li>
                                 <li>' . $tuteur['prenom'] . '</li>
                                <li> ' . $tuteur['telephone'] . '</li>
                                <li> ' . $tuteur['email'] . '</li>
                                 </ul>
-                            ';}
-                    
-                        
-                       
-echo '</div></td>';
-                        echo ' 
+                            ';
+                            }
+
+
+
+                            echo '</div></td>';
+                            echo ' 
                            
                                 <td >
-                                 <a href="#">   <span class="icon"> <i class="fas fa-user-pen"></i></span></a>
-                                  <a href="#"> <span class="icon"> <i class="fas fa-trash-alt"></i></span></a>
+                                 <a href="../back-end/modifier.php?id=' . $list['id'] . '">   <span class="icon"> <i class="fas fa-user-pen"></i></span></a>
+                                  <a href="../back-end/delete.php?id=' . $list['id'] . '"> <span class="icon"> <i class="fas fa-trash-alt"></i></span></a>
                                 </td>
                             </tr>
                         </tbody>';
-                        $i++;
-                }
-                else{ echo '<td class="text-center bg-danger" style="width:75px">  
+                            $i++;
+                        } else {
+                            echo '<td class="text-center bg-danger" style="width:75px">  
                             <p>vide</p>      
                         </td>';
-                        echo ' 
+                            echo ' 
                            
                                 <td>
-                                 <a href="#">   <span class="icon"> <i class="fas fa-user-pen"></i></span></a>
-                                  <a href="#"> <span class="icon"> <i class="fas fa-trash-alt"></i></span></a>
+                                 <a href="../back-end/modifier.php?id=' . $list['id'] . '">   <span class="icon"> <i class="fas fa-user-pen"></i></span></a>
+                                  <a href="../back-end/delete.php?id=' . $list['id'] . '"> <span class="icon"> <i class="fas fa-trash-alt"></i></span></a>
                                 </td>
                             </tr>
                         </tbody>';
-                        $i++;
-                }
+                            $i++;
+                        }
                     }
                     echo '</table>';
                     ?>
 
-           
+
                 </div>
 
 
-
+                <div class=" bout">
+                    <a href="#"> <button type="submit" class="btn boutli  text-center">+</button></a>
+                    <a href="#"> <button type="submit" class="btn boutfli  text-center">X</button></a>
+                </div>
 
             </div>
-            <div class=" row d-flex bout">
-                <a href="#"> <button type="submit" class="btn boutli  text-center">+</button></a>
-                <a href="#"> <button type="submit" class="btn boutfli  text-center">X</button></a>
-            </div>
+
         </div>
 
     </div>
