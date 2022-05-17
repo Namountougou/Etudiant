@@ -51,7 +51,7 @@ if ($nb > 0) {
                                 <input type="password" class="form-control" id="pwd" name="pwd" placeholder="password">
                                 <input type="password" class="form-control" id="cfpwd" name="cfpwd" placeholder="confirmpassword">
                                 <?php if (isset($_GET['error_msg'])) {
-                                    echo  "<div class='cake bg-danger text-light text-center' id='error'> $_GET[error_msg] </div>";
+                                    echo  '<div class="cake bg-danger text-light text-center" id="error">' . $_GET['error_msg'] . ' </div>';
                                 } ?>
                                 <button type="submit" class="btn bouton offset-md-2" name="valider">Submit</button>
 

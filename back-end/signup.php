@@ -10,7 +10,7 @@ if (isset($_POST['valider'])) {
             $nom = $_POST['nom'];
             $prenom = $_POST['prenom'];
             $email = $_POST['email'];
-            $pwd = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
+            $pwd = md5($_POST['pwd']);
             $cfpwd = $_POST['cfpwd'];
 
             // verifier si l'email existe deja

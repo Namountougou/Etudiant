@@ -41,20 +41,17 @@
                                         <form action="../back-end/signin.php" method="post" class="col-md-6 offset-md-2">
                                             <div class="form-group  formins">
                                                 <input type="text" class="form-control" id="email" name="email" placeholder="Entrez votre Email" required>
-                                                <input type="password" class="form-control" id="mdp" name="pwd" placeholder="Mot de passe" required>
-                                                <?php
-                                                //renvoyer un message d'erreur si les champs sont vides
+                                                <input type="password" class="form-control" id="mdp" name="pwd" placeholder="Mot de passe">
 
-
-                                                if (isset($_GET['error_msg'])) {
-                                                    echo  "<div class='cake bg-danger text-light' id='error'> '.$_GET[error_msg].' </div>";
-                                                   
-                                               
-                                               } ?>
                                                 <button type="submit" class="btn bouton mb-2" name="connecter">Connecter</button>
 
                                             </div>
+                                            <?php
 
+
+                                            if (isset($_GET['error_msg'])) {
+                                                echo  '<div class="cake bg-danger text-light text-center" id="error">' . $_GET['error_msg'] . ' </div>';
+                                            } ?>
                                         </form>
 
 

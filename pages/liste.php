@@ -138,8 +138,8 @@ require '../back-end/security.php';
 
 
                 <div class=" bout">
-                    <a href="#"> <button type="submit" class="btn boutli  text-center">+</button></a>
-                    <a href="#"> <button type="submit" class="btn boutfli  text-center">X</button></a>
+                    <a href="./accueil.php"> <button type="submit" class="btn boutli  text-center">+</button></a>
+                    <a href="./auth.php"> <button type="submit" class="btn boutfli  text-center">X</button></a>
                 </div>
 
             </div>
@@ -153,33 +153,7 @@ require '../back-end/security.php';
 
 
 
-    <div class="modal fade col-md-8" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header d-flex justify-content-center">
-                    <h5 class="modal-title" id="exampleModalLabel">TUTEUR</h5>
-
-                </div>
-
-                <div class="modal-body">
-                    <form action="../back-end/add_tuteur.php" method="post">
-                        <div class="form-group col-md-6 offset-md-3">
-                            <input value="'.$list['nom']. '" class="form-control" id="nom" name="nom" required>
-                            <input value="' . $list['prenom'] . '" class="form-control" id="prenom" name="prenom" required>
-                            <input value="' . $list['date'] . '" class="form-control" id="date" name="date_n" required>
-                            <input value="' . $list['email'] . '" class="form-control" id="email" name="email" required>
-                            <input value="' . $list['telephone'] . '" class="form-control" id="telephone" name="telephone" required>
-                            <input value="' . $list['id_tuteur'] . '" class="form-control" id="id_tuteur" name="prenom" required>
-                        </div>
-                </div>
-                <div class="modal-footer d-flex justify-content-evenly">
-                    <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" name="add_tuteur">Enregistrer</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 </body>
 
 
