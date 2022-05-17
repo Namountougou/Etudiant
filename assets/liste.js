@@ -10,3 +10,11 @@ $(document).ready(function () {
      collapsible: true,
    });
  });
+
+
+
+ $(function () {
+   setTimeout(function () {
+     $(".coca").hide();
+   }, 3000);
+ });

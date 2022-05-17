@@ -1,3 +1,7 @@
+<?php
+require '../back-end/security.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -63,7 +67,7 @@
                                         $search->execute();
                                         $list = $search->fetch();
                                         echo '
-                 <form action="../back-end/update.php?id='.$id.'" method="post">
+                 <form action="../back-end/update.php?id=' . $id . '" method="post">
                                     <div class="form-group col-md-6 offset-md-3">
                                         <input value="' . $list['nom'] . '" class="form-control" id="nom" name="nom" required>
                                         <input value="' . $list['prenom'] . '" class="form-control" id="prenom" name="prenom" required>
@@ -79,7 +83,7 @@
                             </div>    
                             </form>';
                                     }
-                                   
+
 
                                     ?>
                                 </div>

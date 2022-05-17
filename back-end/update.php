@@ -9,8 +9,9 @@
  $id_tuteur = $_POST['id_tuteur'];
  $update = $bdd->prepare("UPDATE etudiant SET nom = '$nom', prenom = '$prenom', date_n = '$date_n', email = '$email', telephone = '$telephone', id_tuteur = '$id_tuteur' WHERE id = $id");
  $update->execute();
- $success = "L'étudiant a été modifié avec succès";
- header("location:../pages/liste.php?success_msg= $success_msg");
+ $success_msg = "L'étudiant a été modifié avec succès";
+ 
+ header('location:../pages/liste.php?success_msg='. $success_msg);
  }
  
  ?>

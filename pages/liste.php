@@ -1,3 +1,7 @@
+<?php
+require '../back-end/security.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -32,6 +36,15 @@
                     <img src="../images/pharma.png" class="col-md-1 col-sm-2 float-end logo1">
                 </div>
             </div>
+            <?php
+            if (isset($_GET['success_msg'])) {
+                echo  "<span class='coca bg-success offset-md-3'>$_GET[success_msg]</span>";
+                if (!empty($_GET['success_msg'])) {
+                    unset($_GET['success_msg']);
+                    echo "<META HTTP-EQUIV=\"refresh\" CONTENT=\"0; URL=" . $_SERVER['PHP_SELF'] . "\" >";
+                }
+            }
+            ?>
             <div class="coco d-flex">
                 <div class="row col-md-11">
                     <?php
@@ -140,23 +153,23 @@
 
 
 
-   <div class="modal fade col-md-8" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade col-md-8" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-center">
                     <h5 class="modal-title" id="exampleModalLabel">TUTEUR</h5>
 
                 </div>
-                
+
                 <div class="modal-body">
                     <form action="../back-end/add_tuteur.php" method="post">
                         <div class="form-group col-md-6 offset-md-3">
-                            <input  value="'.$list['nom']. '" class="form-control" id="nom" name="nom" required>
-                            <input  value="' . $list['prenom'] . '" class="form-control" id="prenom" name="prenom" required>
-                            <input  value="' . $list['date'] . '" class="form-control" id="date" name="date_n" required>
+                            <input value="'.$list['nom']. '" class="form-control" id="nom" name="nom" required>
+                            <input value="' . $list['prenom'] . '" class="form-control" id="prenom" name="prenom" required>
+                            <input value="' . $list['date'] . '" class="form-control" id="date" name="date_n" required>
                             <input value="' . $list['email'] . '" class="form-control" id="email" name="email" required>
                             <input value="' . $list['telephone'] . '" class="form-control" id="telephone" name="telephone" required>
-                            <input  value="' . $list['id_tuteur'] . '" class="form-control" id="id_tuteur" name="prenom"  required>
+                            <input value="' . $list['id_tuteur'] . '" class="form-control" id="id_tuteur" name="prenom" required>
                         </div>
                 </div>
                 <div class="modal-footer d-flex justify-content-evenly">

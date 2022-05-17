@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="../assets/mdb5-free-standard/css/mdb.min.css">
     <link rel="stylesheet" href="../assets/jquery-ui-1.13.1.custom/jquery-ui.min.css">
-    <script src="../assets/index.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="../assets/jquery-ui-1.13.1.custom/jquery-ui.min.js"></script>
     <script src="../assets/mdb5-free-standard/js/mdb.min.js"></script>
@@ -42,15 +41,18 @@
                                         <form action="../back-end/signin.php" method="post" class="col-md-6 offset-md-2">
                                             <div class="form-group  formins">
                                                 <input type="text" class="form-control" id="email" name="email" placeholder="Entrez votre Email" required>
-                                                <input type="text" class="form-control" id="mdp" name="pwd" placeholder="Mot de passe" required>
-                                                <button type="submit" class="btn bouton mb-2" name="connecter">Connecter</button>
+                                                <input type="password" class="form-control" id="mdp" name="pwd" placeholder="Mot de passe" required>
                                                 <?php
                                                 //renvoyer un message d'erreur si les champs sont vides
 
 
                                                 if (isset($_GET['error_msg'])) {
-                                                    echo  '<div class=" bg-danger col-md-6 offset-md-3 coca">"' . $_GET['error_msg'] . '"</div>';
-                                                }?>
+                                                    echo  "<div class='cake bg-danger text-light' id='error'> '.$_GET[error_msg].' </div>";
+                                                   
+                                               
+                                               } ?>
+                                                <button type="submit" class="btn bouton mb-2" name="connecter">Connecter</button>
+
                                             </div>
 
                                         </form>
@@ -74,7 +76,7 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
+    <script defer>
         function display() {
             document.getElementById("error").style.display = "none";
         }

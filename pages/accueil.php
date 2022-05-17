@@ -1,3 +1,7 @@
+
+<?php  
+require '../back-end/security.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -53,6 +57,7 @@
 
                 <a href="./liste.php"> <button type="submit" class="btn btn-secondary mt-3">Lister</button></a>
                 <button type="button" class="btn btn-primary mt-3" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Tuteur</button>
+                <a href="./Logout.php"> <button type="submit" class="btn btn-secondary mt-3">Deconnecter</button></a>
               </div>
             </div>
           </div>
@@ -65,9 +70,17 @@
                 <?php
                 if (isset($_GET['error_msg'])) {
                   echo  "<span class='coca bg-danger'>$_GET[error_msg]</span>";
+                  if (!empty($_GET['error_msg'])) {
+                    unset($_GET['error_msg']);
+                    echo "<META HTTP-EQUIV=\"refresh\" CONTENT=\"0; URL=" . $_SERVER['PHP_SELF'] . "\" >";
+                  }
                 }
                 if (isset($_GET['success_msg'])) {
                   echo  "<span class='coca bg-success'>$_GET[success_msg]</span>";
+                  if (!empty($_GET['success_msg'])) {
+                    unset($_GET['success_msg']);
+                    echo "<META HTTP-EQUIV=\"refresh\" CONTENT=\"0; URL=" . $_SERVER['PHP_SELF'] . "\" >";
+                  }
                 }
                 ?>
                 <div class="card-body d-flex justify-content-md-center">
@@ -115,8 +128,8 @@
 
 
 
-   
-   
+
+
 </body>
 
 </html>

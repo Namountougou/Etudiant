@@ -4,28 +4,36 @@
 require 'conndb.php';
 
 if (isset($_POST['valider'])) {
-  
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $email = $_POST['email'];
-    $pwd = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
-    $cfpwd = $_POST['cfpwd'];
+    if (!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['pwd']) && !empty($_POST['cfpwd'])) {
+        if ($_POST['pwd'] == $_POST['cfpwd']) {
 
-    if (!empty($nom) && !empty($prenom) && !empty($email) && !empty($pwd) && !empty($cfpwd)) {
-   
-        
-          // verifier si l'email existe deja
+            $nom = $_POST['nom'];
+            $prenom = $_POST['prenom'];
+            $email = $_POST['email'];
+            $pwd = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
+            $cfpwd = $_POST['cfpwd'];
+
+            // verifier si l'email existe deja
             $req = $bdd->prepare("SELECT * FROM admine WHERE email = ?");
             $req->execute(array($email));
             $user = $req->rowCount();
-            if ($user==0) { // si l'email n'existe pas
+            if ($user == 0) { // si l'email n'existe pas
                 $req = $bdd->prepare("INSERT INTO admine(nom,prenom,email,mdp) VALUES(?,?,?,?)");
-                $req->execute(array($nom,$prenom,$email,$pwd));
-        
-                header('Location: ./pages/auth.php?signup=1');}
+                $req->execute(array($nom, $prenom, $email, $pwd));
+                header('Location: ../pages/auth.php');
             }
-            else{
-                $error_msg = "verifier vos champs";
-            }
+        } else {
+            $error_msg = "Compte existant";
+            header('Location: ../index.php?error_msg=' . $error_msg);
         }
+        
+
+    } 
+    else {
+        $error_msg = "Remplir tous les champs";
+        header('Location: ../index.php?error_msg=' . $error_msg);
+    }
+}
+
+
 ?>

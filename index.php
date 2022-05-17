@@ -1,4 +1,14 @@
+<?php
 
+include './back-end/conndb.php';
+$req = $bdd->prepare('SELECT COUNT(*) FROM admine');
+$req->execute();
+$nb = $req->fetchColumn();
+
+if ($nb > 0) {
+    header('location:./pages/auth.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -33,17 +43,18 @@
                     <div class="card-body">
                         <img src="./images/iconedoc.png" class="col-md-1 offset-md-4 col-sm-2 logdoc">
 
-                        <form action="" method="POST" class="d-flex justify-content-md-center">
+                        <form action="./back-end/signup.php" method="POST" class="d-flex justify-content-md-center">
                             <div class="form-group border-4 border-bottom  formins">
                                 <input type="text" class="form-control" id="nom" name="nom" placeholder="nom">
                                 <input type="text" class="form-control" id="prenom" name="prenom" placeholder="prenom">
                                 <input type="text" class="form-control" id="email" name="email" placeholder="email">
                                 <input type="password" class="form-control" id="pwd" name="pwd" placeholder="password">
                                 <input type="password" class="form-control" id="cfpwd" name="cfpwd" placeholder="confirmpassword">
-                                <button type="submit" class="btn bouton offset-md-2" name="valider">Submit</button>
-                                <?php if (isset ($error_msg)) {
-                                    echo   "<span class='alert alert-danger text-center erreur' id='error'>$error_msg</span>";
+                                <?php if (isset($_GET['error_msg'])) {
+                                    echo  "<div class='cake bg-danger text-light text-center' id='error'> $_GET[error_msg] </div>";
                                 } ?>
+                                <button type="submit" class="btn bouton offset-md-2" name="valider">Submit</button>
+
                             </div>
                         </form>
 
@@ -58,11 +69,11 @@
     </div>
 
     <script type="text/javascript">
-        function display(){
-            document.getElementById("error").style.display = "none";}
-        
-        setTimeout(display, 2000);
-        
+        function display() {
+            document.getElementById("error").style.display = "none";
+        }
+
+        setTimeout(display, 5000);
     </script>
 
 
