@@ -16,7 +16,7 @@ require '../back-end/security.php';
     <link rel="stylesheet" href="../assets/jquery-ui-1.13.1.custom/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/DataTables/datatables.min.css" />
     <script src="../assets/liste.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+     <script src="../assets/jquery-3.6.0.js"></script>
     <script src="../assets/jquery-ui-1.13.1.custom/jquery-ui.min.js"></script>
     <script type="text/javascript" src="../assets/DataTables/datatables.min.js"></script>
     <script src="../assets/mdb5-free-standard/js/mdb.min.js" defer></script>

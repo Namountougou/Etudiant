@@ -14,7 +14,7 @@ require '../back-end/security.php';
     <link rel="stylesheet" href="../assets/mdb5-free-standard/css/mdb.min.css">
     <link rel="stylesheet" href="../assets/jquery-ui-1.13.1.custom/jquery-ui.min.css">
     <script src="../assets/index.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+     <script src="../assets/jquery-3.6.0.js"></script>
     <script src="../assets/jquery-ui-1.13.1.custom/jquery-ui.min.js"></script>
     <script src="../assets/mdb5-free-standard/js/mdb.min.js" defer></script>
 </head>
